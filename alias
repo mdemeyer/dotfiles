@@ -1,0 +1,17 @@
+#! /bin/bash
+#
+# Alias file
+# Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
+#
+
+# Enable color output for commands
+alias ls="ls --color=auto"
+alias grep="grep --color=auto"
+alias dmesg='dmesg --color'
+alias diff='colordiff'
+
+# Give ping a default timeout
+alias ping='ping -c 4'
+
+# Sane date format
+alias date='date +%Y/%m/%d'
