@@ -1,0 +1,28 @@
+#
+# kdesrc frameworks config
+#
+
+global
+    # KDE install directory
+    qtdir ~/src/qt5/qtbase
+    kdedir /opt/kde5
+    make-install-prefix sudo
+
+    # Directory for downloaded source code
+    source-dir ~/src/kde
+
+    # Directory to build KDE into before installing
+    build-dir build
+
+    # Use multiple cores for building. Other options to GNU make may also be
+    # set.
+    make-options -j1
+
+    # Login to use for SVN. Anonymous SVN can be used by just deleting this
+    # option.
+    # Note that ssh-agent must be running and loaded with the right key.
+    svn-server svn+ssh://svn@svn.kde.org/home/kde
+
+end global
+
+include kf5-qt5-build-include

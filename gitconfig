@@ -1,0 +1,9 @@
+[url "git://anongit.kde.org/"]
+	insteadOf = kde:
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
+[user]
+	email = de.meyer.maarten@gmail.com
+	name = Maarten De Meyer
+[commit]
+	template = .commit-template

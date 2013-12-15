@@ -1,0 +1,88 @@
+#
+# kdesrc config
+#
+# docs: http://kdesrc-build.kde.org/documentation/
+#
+
+# Build legacy KDE SC
+global
+    # KDE install directory
+    kdedir /opt/kde4
+    make-install-prefix sudo
+
+    # Directory for downloaded source code
+    source-dir ~/src/kde
+
+    # Directory to build KDE into before installing
+    build-dir build
+
+    # Use multiple cores for building. Other options to GNU make may also be
+    # set.
+    make-options -j1
+
+    # Login to use for SVN. Anonymous SVN can be used by just deleting this
+    # option.
+    # Note that ssh-agent must be running and loaded with the right key.
+    svn-server svn+ssh://svn@svn.kde.org/home/kde
+
+end global
+
+module-set core-deps
+    repository kde-projects
+    use-modules automoc cagibi attica soprano polkit-qt-1 kdesupport/strigi extra-cmake-modules
+end module-set
+
+module-set phonon
+    repository kde-projects
+    use-modules phonon/phonon phonon-vlc
+end module-set
+
+module libdbusmenu-qt
+    repository bzr://lp:libdbusmenu-qt
+end module
+
+module-set base
+    repository kde-projects
+    use-modules kdelibs kdepimlibs nepomuk-core kactivities kde-runtime
+end module-set
+
+module-set base-apps
+    repository kde-projects
+    use-modules nepomuk-widgets kate kde-baseapps konsole
+end module-set
+
+module-set kde-workspace
+    repository kde-projects
+    branch KDE/4.11
+    use-modules kde-workspace
+end module-set
+
+module-set kdesdk
+    repository kde-projects
+    use-modules kcachegrind
+end module-set
+
+module-set kdenetwork
+    repository kde-projects
+    use-modules libmm-qt libnm-qt plasma-nm
+end module-set
+
+module-set pim
+    repository kde-projects
+    use-modules akonadi kdepim-runtime kdepim
+end module-set
+
+module-set multimedia
+    repository kde-projects
+    use-modules kmix
+end module-set
+
+module-set kdeutils
+    repository kde-projects
+    use-modules kwallet kdesrc-build ark
+end module-set
+
+module-set extragear
+    repository kde-projects
+    use-modules libktorrent ktorrent telepathy
+end module-set

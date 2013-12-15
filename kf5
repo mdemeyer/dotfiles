@@ -1,0 +1,45 @@
+#! /bin/bash
+#
+# Frameworks 5 bash settings
+# Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
+#
+# More information: http://community.kde.org/Frameworks/Building
+#
+
+# Use the correct source directory
+export QTDIR=~/src/qt5/qtbase
+export KF5=/opt/kde5
+export XDG_DATA_DIRS=$KF5/share:$XDG_DATA_DIRS:/usr/share
+export XDG_CONFIG_DIRS=$KF5/etc/xdg:$XDG_CONFIG_DIRS:/etc/xdg
+export PATH=$KF5/bin:$QTDIR/bin:$PATH
+export QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-gnu/plugins:$QTDIR/plugins:$QT_PLUGIN_PATH
+export QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml:$QTDIR/qml
+
+# Use separate user settings
+export XDG_DATA_HOME=$HOME/.local5
+export XDG_CONFIG_HOME=$HOME/.config5
+export XDG_CACHE_HOME=$HOME/.cache5
+
+# Make kded5 load modules
+export KDE_SESSION_VERSION=5
+
+# Use the correct kdesrc configuration file
+alias kdesrc-build='cd ~/src/kde/extragear/utils/kdesrc-build  && kdesrc-build --rc-file ~/.kdesrc-f5-buildrc'
+
+# Compile other stuff on top of KF5
+export CMAKE_PREFIX_PATH=$KF5:$CMAKE_PREFIX_PATH
+
+# Get more information out of qDebug
+c=`echo -e "\033"`
+export QT_MESSAGE_PATTERN="%{appname}(%{pid})/(%{category}) "$'\033'\[31m"%{if-debug}"$'\033'\[34m"%{endif}%{function}"$'\033'\[0m": %{message}"
+unset c
+
+# Report what the environment is set to
+echo
+echo "*** Configured KDE Frameworks Build Environment ***"
+echo
+echo "QTDIR=" $QTDIR
+echo "KDEDIR=" $KF5
+echo "PATH=" $PATH
+echo
+
