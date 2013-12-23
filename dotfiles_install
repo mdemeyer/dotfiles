@@ -1,0 +1,35 @@
+#!/bin/bash
+# dotfiles_install
+#
+# Install a symlink to the needed dotfiles
+# Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
+#
+
+# File list
+core="alias bashrc vimrc"
+home="functions xinitrc"
+dev="gitconfig kdesrc-buildrc kdesrc-f5-buildrc kf5 bash_kde"
+
+# Select the files to install
+package=${1:-base}
+case $package in
+    base)
+        files="$core" ;;
+    dev|kde)
+        files="$core $dev" ;;
+    home)
+        files="$core $dev $home" ;;
+    *)
+        echo "Package $package not found!" ;;
+esac
+
+# Backup dir
+backupDir=~/.dofiles_backup
+mkdir -p backupDir
+
+cd ~/src/dotfiles
+for file in $files; do
+    echo "Installing $file"
+    mv ~/.$file $backupDir
+    ln -s ~/src/dotfiles/$file ~/.$file
+done
