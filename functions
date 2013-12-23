@@ -1,0 +1,95 @@
+#! /bin/bash
+#
+# Usefull functions
+# Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
+#
+
+# Improve youtube-dl 
+function video_dl()
+{
+    # Default download directory
+    cd ~/Downloads
+
+    # If there is no link provided ask for one
+    if [ $# -eq 0 ] ; then
+        readClipboard=`qdbus-qt4 org.kde.klipper /klipper getClipboardContents`
+        video=`kdialog --title "Download" --inputbox "What video do you want to download?" "$readClipboard"`
+    else
+        video=$1
+    fi
+
+    # Actual download
+    youtube-dl $video
+
+    # Simulate a download to get the video title
+    videoName=`youtube-dl --get-title $video`
+
+    kdialog --title "Download finished" --passivepopup "<b>$videoName</b>\nfinished downloading" 5
+    # Return to previous directory
+    cd -
+    sleep 5
+    echo
+}
+
+# Create a build folder an build the source
+function makebuild()
+{
+    base=`basename $PWD`
+    if [ $base = "build" ] ; then
+        cd ..
+    fi
+
+    shopt -s nullglob
+    dirs=(*/)
+    shopt -u nullglob
+
+    for dir in "$dirs" ; do
+        if [ $dir = "build/" ] ; then
+            rm build/ -r
+        fi
+    done
+
+    mkdir build
+    cd build
+    cmake ..
+
+    echo "Press <ENTER> to continue..."
+    read userinput
+    make
+}
+
+# Rebuild source in current build folder
+function build()
+{
+    base=`basename $PWD`
+    if [ ! $base = "build" ] ; then
+        # Wrong directory
+        cd build/
+    fi
+
+    cmake ..
+    make
+}
+
+# Extract archives
+function extract()
+{
+    if [ -f $1 ] ; then
+        ark --batch --autodestination --autosubfolder $1
+   else
+        echo "Not a valid file."
+    fi
+}
+
+# Easy to use tar command
+function maketar()
+{  
+    tar cvzf "$1%%/}.tar.gz"    "${1%%/}"
+}
+
+# Easy zip
+function makezip()
+{
+    zip -r "${1%%/}.zip"    "$1"
+}
+
