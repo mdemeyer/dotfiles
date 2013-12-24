@@ -4,6 +4,14 @@
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
 #
 
+# History settings
+HISTSIZE=500
+HISTFILESIZE=1000
+# No duplicate lines or lines that start with space
+HISTCONTROL=ignoreboth
+
+# Update window size after every command
+shopt -s checkwinsize
 
 # Setup VI
 export EDITOR=/usr/bin/vim
