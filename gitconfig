@@ -7,3 +7,5 @@
 	name = Maarten De Meyer
 [commit]
 	template = .commit-template
+[color]
+	ui = auto
