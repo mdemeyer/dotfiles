@@ -24,12 +24,17 @@ case $package in
 esac
 
 # Backup dir
-backupDir=~/.dofiles_backup
-mkdir -p backupDir
+backupDir=~/.dotfiles_backup
+mkdir -p $backupDir
 
 cd ~/src/dotfiles
 for file in $files; do
     echo "Installing $file"
-    mv ~/.$file $backupDir
+    if [ -f ~/.$file ]; then
+        mv ~/.$file $backupDir
+    fi
     ln -s ~/src/dotfiles/$file ~/.$file
 done
+
+source ~/.bashrc
+
