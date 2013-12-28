@@ -18,5 +18,5 @@ alias cleandate='date +%Y/%m/%d'
 
 # Building kde-workspace needs python2
 # https://wiki.archlinux.org/index.php/Python#Python_2
-alias kde-src='export PATH=~/.bin:$PATH && kde-src'
+alias kdesrc-build='export PATH=~/.bin:$PATH && kdesrc-build'
 
