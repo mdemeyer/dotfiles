@@ -32,6 +32,9 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1
 export SRC=~/src
 export XDG_CACHE_HOME=~/.cache
 
+# Find local libraries
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
+
 # Start KDE on startup
 # This needs ~/.xinit
 if [ -f ~/.xinit ] ; then
