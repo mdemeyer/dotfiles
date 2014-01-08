@@ -7,9 +7,6 @@
 # Improve youtube-dl 
 function video_dl()
 {
-    # Default download directory
-    cd ~/Downloads
-
     # If there is no link provided ask for one
     if [ $# -eq 0 ] ; then
         readClipboard=`qdbus-qt4 org.kde.klipper /klipper getClipboardContents`
@@ -19,16 +16,12 @@ function video_dl()
     fi
 
     # Actual download
-    youtube-dl $video
+    youtube-dl $video -o "~/Downloads/%(title)s.%(ext)s"
 
     # Simulate a download to get the video title
     videoName=`youtube-dl --get-title $video`
 
     kdialog --title "Download finished" --passivepopup "<b>$videoName</b>\nfinished downloading" 5
-    # Return to previous directory
-    cd -
-    sleep 5
-    echo
 }
 
 # Create a build folder an build the source
