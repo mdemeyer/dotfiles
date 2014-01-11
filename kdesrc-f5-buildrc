@@ -9,7 +9,7 @@ global
     make-install-prefix sudo
 
     # Directory for downloaded source code
-    source-dir ~/src/kde
+    source-dir ~/src/kf5
 
     # Directory to build KDE into before installing
     build-dir build
