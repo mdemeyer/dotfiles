@@ -25,4 +25,4 @@ global
 
 end global
 
-include kf5-qt5-build-include
+include /home/maarten/src/kde/extragear/utils/kdesrc-build/kf5-qt5-build-include
