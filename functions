@@ -16,7 +16,7 @@ function video_dl()
     fi
 
     # Actual download
-    youtube-dl $video -o "~/Downloads/%(title)s.%(ext)s"
+    youtube-dl $video -o "~/Downloads/%(title)s.%(ext)s" --no-part
 
     # Simulate a download to get the video title
     videoName=`youtube-dl --get-title $video`
