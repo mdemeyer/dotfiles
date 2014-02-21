@@ -43,12 +43,12 @@ end module
 
 module-set base
     repository kde-projects
-    use-modules kdelibs kdepimlibs nepomuk-core kactivities kde-runtime
+    use-modules kdelibs kdepimlibs kde-runtime
 end module-set
 
 module-set base-apps
     repository kde-projects
-    use-modules nepomuk-widgets kate kde-baseapps konsole
+    use-modules kate kde-baseapps konsole
 end module-set
 
 module-set kde-workspace
@@ -79,7 +79,7 @@ end module-set
 
 module-set kdeutils
     repository kde-projects
-    use-modules kwallet kdesrc-build ark
+    use-modules kdesrc-build ark
 end module-set
 
 module-set extragear
