@@ -23,6 +23,8 @@ global
     # Note that ssh-agent must be running and loaded with the right key.
     svn-server svn+ssh://svn@svn.kde.org/home/kde
 
+    # Branch group
+    branch-group kf5-qt5
 end global
 
 include /home/maarten/src/kde/extragear/utils/kdesrc-build/kf5-qt5-build-include
