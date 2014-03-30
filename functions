@@ -4,26 +4,6 @@
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
 #
 
-# Improve youtube-dl 
-function video_dl()
-{
-    # If there is no link provided ask for one
-    if [ $# -eq 0 ] ; then
-        readClipboard=`qdbus-qt4 org.kde.klipper /klipper getClipboardContents`
-        video=`kdialog --title "Download" --inputbox "What video do you want to download?" "$readClipboard"`
-    else
-        video=$1
-    fi
-
-    # Actual download
-    youtube-dl $video -o "~/Downloads/%(title)s.%(ext)s" --no-part
-
-    # Simulate a download to get the video title
-    videoName=`youtube-dl --get-title $video`
-
-    kdialog --title "Download finished" --passivepopup "<b>$videoName</b>\nfinished downloading" 5
-}
-
 # Create a build folder an build the source
 function makebuild()
 {
