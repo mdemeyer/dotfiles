@@ -7,13 +7,19 @@
 #
 
 # Use the correct source directory
-export QTDIR=~/src/qt5/qtbase
+# export QTDIR=~/src/qt5/qtbase
 export KF5=/opt/kde5
 export XDG_DATA_DIRS=$KF5/share:$XDG_DATA_DIRS:/usr/share
 export XDG_CONFIG_DIRS=$KF5/etc/xdg:$XDG_CONFIG_DIRS:/etc/xdg
-export PATH=$KF5/bin:$QTDIR/bin:$PATH
-export QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-gnu/plugins:$QTDIR/plugins:$QT_PLUGIN_PATH
-export QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml:$QTDIR/qml
+export PATH=$KF5/bin:$PATH
+#export PATH=$KF5/bin:$QTDIR/bin:$PATH
+export QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-gnu/plugins:$QT_PLUGIN_PATH
+#export QT_PLUGIN_PATH=$KF5/lib/plugins:$KF5/lib64/plugins:$KF5/lib/x86_64-linux-gnu/plugins:$QTDIR/plugins:$QT_PLUGIN_PATH
+export QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml
+#export QML2_IMPORT_PATH=$KF5/lib/qml:$KF5/lib64/qml:$KF5/lib/x86_64-linux-gnu/qml:$QTDIR/qml
+export QML_IMPORT_PATH=$QML2_IMPORT_PATH
+export KDE_FULL_SESSION=true
+#export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 
 # Use separate user settings
 export XDG_DATA_HOME=$HOME/.local5
@@ -35,11 +41,12 @@ export QT_MESSAGE_PATTERN="%{appname}(%{pid})/(%{category}) "$'\033'\[31m"%{if-d
 unset c
 
 # Report what the environment is set to
-echo
-echo "*** Configured KDE Frameworks Build Environment ***"
-echo
-echo "QTDIR=" $QTDIR
-echo "KDEDIR=" $KF5
-echo "PATH=" $PATH
-echo
+#echo
+#echo "*** Configured KDE Frameworks Build Environment ***"
+#echo
+#echo "QTDIR=" $QTDIR
+#echo "KDEDIR=" $KF5
+#echo "PATH=" $PATH
+#echo "LD_LIBRARY_PATH=" $LD_LIBRARY_PATH
+#echo
 
