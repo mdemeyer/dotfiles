@@ -6,6 +6,6 @@
 	email = de.meyer.maarten@gmail.com
 	name = Maarten De Meyer
 [commit]
-	template = .commit-template
+	template = ~/.commit-template
 [color]
 	ui = auto
