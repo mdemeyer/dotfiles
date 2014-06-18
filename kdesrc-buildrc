@@ -29,17 +29,13 @@ end global
 
 module-set core-deps
     repository kde-projects
-    use-modules automoc cagibi attica soprano polkit-qt-1 kdesupport/strigi extra-cmake-modules
+    use-modules automoc cagibi polkit-qt-1 kdesupport/strigi extra-cmake-modules
 end module-set
 
 module-set phonon
     repository kde-projects
     use-modules phonon/phonon phonon-vlc
 end module-set
-
-module libdbusmenu-qt
-    repository bzr://lp:libdbusmenu-qt
-end module
 
 module-set base
     repository kde-projects

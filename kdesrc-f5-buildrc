@@ -14,14 +14,15 @@ global
     # Directory to build KDE into before installing
     build-dir build
 
+    # CMake flags
+    cmake-options -DCMAKE_BUILD_TYPE:STRING=debug -DKDE4_BUILD_TESTS=true
+
+    # Compiler flags
+    cxxflags -pipe -DQT_STRICT_ITERATORS -DQURL_NO_CAST_FROM_STRING -DQT_NO_HTTP -DQT_NO_FTP -Wformat -Werror=format-security -Werror=return-type -Wno-variadic-macros -Wlogical-op -Wmissing-include-dirs
+
     # Use multiple cores for building. Other options to GNU make may also be
     # set.
     make-options -j1
-
-    # Login to use for SVN. Anonymous SVN can be used by just deleting this
-    # option.
-    # Note that ssh-agent must be running and loaded with the right key.
-    svn-server svn+ssh://svn@svn.kde.org/home/kde
 
     # Branch group
     branch-group kf5-qt5
