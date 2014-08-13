@@ -7,7 +7,7 @@
 #
 
 # Use the correct source directory
-# export QTDIR=~/src/qt5/qtbase
+export QTDIR=/usr/lib64/qt/
 export KF5=/opt/kde5
 export XDG_DATA_DIRS=$KF5/share:$XDG_DATA_DIRS:/usr/share
 export XDG_CONFIG_DIRS=$KF5/etc/xdg:$XDG_CONFIG_DIRS:/etc/xdg
@@ -22,9 +22,9 @@ export KDE_FULL_SESSION=true
 #export LD_LIBRARY_PATH=$QTDIR/lib:$LD_LIBRARY_PATH
 
 # Use separate user settings
-export XDG_DATA_HOME=$HOME/.local5
-export XDG_CONFIG_HOME=$HOME/.config5
-export XDG_CACHE_HOME=$HOME/.cache5
+export XDG_DATA_HOME=$HOME/.local
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
 
 # Make kded5 load modules
 export KDE_SESSION_VERSION=5
@@ -39,14 +39,4 @@ export CMAKE_PREFIX_PATH=$KF5:$CMAKE_PREFIX_PATH
 c=`echo -e "\033"`
 export QT_MESSAGE_PATTERN="%{appname}(%{pid})/(%{category}) "$'\033'\[31m"%{if-debug}"$'\033'\[34m"%{endif}%{function}"$'\033'\[0m": %{message}"
 unset c
-
-# Report what the environment is set to
-#echo
-#echo "*** Configured KDE Frameworks Build Environment ***"
-#echo
-#echo "QTDIR=" $QTDIR
-#echo "KDEDIR=" $KF5
-#echo "PATH=" $PATH
-#echo "LD_LIBRARY_PATH=" $LD_LIBRARY_PATH
-#echo
 

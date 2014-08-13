@@ -23,7 +23,7 @@ test -s ~/.functions && source ~/.functions || true
 test -s ~/.alias && source ~/.alias || true
 
 # Set the system up for kde development
-test -s ~/.bash_kde && source ~/.bash_kde || true
+test -s ~/.kf5 && source ~/.kf5 || true
 
 # Fancy prompt
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
