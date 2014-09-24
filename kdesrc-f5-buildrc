@@ -28,4 +28,4 @@ global
     branch-group kf5-qt5
 end global
 
-include /home/maarten/src/kde/extragear/utils/kdesrc-build/kf5-qt5-build-include
+include /home/maarten/src/kf5/extragear/utils/kdesrc-build/kf5-qt5-build-include

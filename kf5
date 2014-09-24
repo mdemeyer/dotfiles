@@ -30,7 +30,7 @@ export XDG_CACHE_HOME=$HOME/.cache
 export KDE_SESSION_VERSION=5
 
 # Use the correct kdesrc configuration file
-alias kdesrc-build='cd ~/src/kde/extragear/utils/kdesrc-build  && kdesrc-build --rc-file ~/.kdesrc-f5-buildrc'
+alias kdesrc-build='cd ~/src/kf5/extragear/utils/kdesrc-build  && kdesrc-build --rc-file ~/.kdesrc-f5-buildrc'
 
 # Compile other stuff on top of KF5
 export CMAKE_PREFIX_PATH=$KF5:$CMAKE_PREFIX_PATH
