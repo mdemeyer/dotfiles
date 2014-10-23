@@ -31,6 +31,11 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1
 # Smaller man pages
 export MANWIDTH=70
 
+# Use bash-completion, if available
+if [ -f /usr/share/bash-completion/bash_completion ] ; then
+    test -n "$PS1" && . /usr/share/bash-completion/bash_completion
+fi
+
 # Src directory
 export SRC=~/src
 export XDG_CACHE_HOME=~/.cache
