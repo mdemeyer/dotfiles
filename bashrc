@@ -4,6 +4,9 @@
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
 #
 
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
 # History settings
 HISTSIZE=500
 HISTFILESIZE=1000
@@ -26,7 +29,30 @@ test -s ~/.alias && source ~/.alias || true
 test -s ~/.kf5 && source ~/.kf5 || true
 
 # Fancy prompt
-PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
+WHITE="\[\e[1;37m\]"
+RED="\[\e[1;31m\]"
+GREEN="\[\e[1;32m\]"
+YELLOW="\[\e[1;33m\]"
+BLUE="\[\e[1;34m\]"
+END="\[\033[0m\]"
+
+# Make the prompt re when running as root
+if [ $(id -u) -eq 0 ]; then
+    USER="${RED}\u${END}"
+    USER_PROMPT="${RED}#${END}"
+else
+    USER="${GREEN}\u${END}"
+    USER_PROMPT="${GREEN}\$${END}"
+fi
+
+# Show the host on remote connection
+if [ -n "$SSH_CLIENT" ]; then
+    REMOTE="${BLUE}@${YELLOW}\h${END}"
+else
+    REMOTE=""
+fi
+
+PS1="${WHITE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
 
 # Smaller man pages
 export MANWIDTH=70
