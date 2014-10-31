@@ -5,12 +5,16 @@
 #
 
 # Enable color output for commands
-alias ls="ls --color=auto"
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias dmesg='dmesg --color'
 alias diff='colordiff'
+
+# Obligatory ls aliases
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -Al'
 
 # Give ping a default timeout
 alias ping='ping -c 4'
