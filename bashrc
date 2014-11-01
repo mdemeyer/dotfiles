@@ -16,9 +16,6 @@ HISTCONTROL=ignoreboth
 # Update window size after every command
 shopt -s checkwinsize
 
-# Setup VI
-export EDITOR=/usr/bin/vim
-
 # Include bash functions
 test -s ~/.functions && source ~/.functions || true
 
@@ -54,17 +51,10 @@ fi
 
 PS1="${BLUE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
 
-# Smaller man pages
-export MANWIDTH=70
-
 # Use bash-completion, if available
 if [ -f /usr/share/bash-completion/bash_completion ] ; then
     test -n "$PS1" && . /usr/share/bash-completion/bash_completion
 fi
-
-# Src directory
-export SRC=~/src
-export XDG_CACHE_HOME=~/.cache
 
 # Start KDE on startup
 # This needs ~/.xinit

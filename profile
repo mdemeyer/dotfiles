@@ -10,3 +10,12 @@ if [ -n "$BASH_VERSION" ]; then
     test -s ~/.bashrc && source ~/.bashrc || true
 fi
 
+# Setup VI
+export EDITOR=/usr/bin/vim
+
+# Smaller man pages
+export MANWIDTH=70
+
+# Src directory
+export SRC=~/src
+
