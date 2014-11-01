@@ -26,5 +26,5 @@ export MANWIDTH=70
 export SRC=~/src
 
 # Stupid firefox keeps creating Desktop folder in $HOME
-export XDG_DESKTOP_DIR="/home/maarten"
+export XDG_DESKTOP_DIR=/home/maarten
 
