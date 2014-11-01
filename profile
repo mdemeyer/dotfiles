@@ -10,6 +10,12 @@ if [ -n "$BASH_VERSION" ]; then
     test -s ~/.bashrc && source ~/.bashrc || true
 fi
 
+# History settings
+export HISTSIZE=500
+export HISTFILESIZE=1000
+# No duplicate lines or lines that start with space
+export HISTCONTROL=ignoreboth
+
 # Setup VI
 export EDITOR=/usr/bin/vim
 

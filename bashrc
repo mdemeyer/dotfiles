@@ -7,12 +7,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# History settings
-HISTSIZE=500
-HISTFILESIZE=1000
-# No duplicate lines or lines that start with space
-HISTCONTROL=ignoreboth
-
 # Update window size after every command
 shopt -s checkwinsize
 
