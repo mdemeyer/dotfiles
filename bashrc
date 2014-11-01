@@ -52,7 +52,7 @@ else
     REMOTE=""
 fi
 
-PS1="${WHITE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
+PS1="${BLUE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
 
 # Smaller man pages
 export MANWIDTH=70
