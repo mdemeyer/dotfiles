@@ -7,8 +7,8 @@
 # Create a build folder an build the source
 makebuild()
 {
-    base=`basename $PWD`
-    if [ $base = "build" ] ; then
+    base=$(basename "$PWD")
+    if [ "$base" = "build" ] ; then
         cd ..
     fi
 
@@ -16,7 +16,7 @@ makebuild()
     dirs=(*/)
     shopt -u nullglob
 
-    for dir in "$dirs" ; do
+    for dir in ${dirs[@]} ; do
         if [ $dir = "build/" ] ; then
             rm build/ -r
         fi
@@ -26,7 +26,7 @@ makebuild()
     cd build
     cmake ..
 
-    echo "Press <ENTER> to continue..."
+    echo 'Press <ENTER> to continue...'
     read userinput
     make
 }
@@ -34,8 +34,8 @@ makebuild()
 # Rebuild source in current build folder
 build()
 {
-    base=`basename $PWD`
-    if [ ! $base = "build" ] ; then
+    base=$(basename "$PWD")
+    if [ ! "$base" = 'build' ] ; then
         # Wrong directory
         cd build/
     fi
@@ -47,10 +47,10 @@ build()
 # Extract archives
 extract()
 {
-    if [ -f $1 ] ; then
-        ark --batch --autodestination --autosubfolder $1
+    if [ -f "$1" ] ; then
+        ark --batch --autodestination --autosubfolder "$1"
    else
-        echo "Not a valid file."
+        echo 'Not a valid file.'
     fi
 }
 
