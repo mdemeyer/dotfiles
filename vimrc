@@ -96,3 +96,7 @@ endif
 :set shiftwidth=4
 :set expandtab
 
+" Don't move around wrapped lines, go down one row on the screen
+:nmap j gj
+:nmap k gk
+
