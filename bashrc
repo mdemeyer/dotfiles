@@ -50,9 +50,3 @@ if [ -f /usr/share/bash-completion/bash_completion ] ; then
     test -n "$PS1" && . /usr/share/bash-completion/bash_completion
 fi
 
-# Start KDE on startup
-# This needs ~/.xinit
-if [ -f ~/.xinit ] ; then
-    [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-fi
-
