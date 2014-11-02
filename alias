@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env sh
 #
 # Alias file
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>

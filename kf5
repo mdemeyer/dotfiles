@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env sh
 #
 # Frameworks 5 bash settings
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>

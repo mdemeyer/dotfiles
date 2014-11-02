@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/usr/bin/env sh
 #
 # Usefull functions
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
