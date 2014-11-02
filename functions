@@ -5,7 +5,7 @@
 #
 
 # Create a build folder an build the source
-function makebuild()
+makebuild()
 {
     base=`basename $PWD`
     if [ $base = "build" ] ; then
@@ -32,7 +32,7 @@ function makebuild()
 }
 
 # Rebuild source in current build folder
-function build()
+build()
 {
     base=`basename $PWD`
     if [ ! $base = "build" ] ; then
@@ -45,7 +45,7 @@ function build()
 }
 
 # Extract archives
-function extract()
+extract()
 {
     if [ -f $1 ] ; then
         ark --batch --autodestination --autosubfolder $1
@@ -55,20 +55,20 @@ function extract()
 }
 
 # Easy to use tar command
-function maketar()
+maketar()
 {  
     tar cvzf "$1%%/}.tar.gz"    "${1%%/}"
 }
 
 # Easy zip
-function makezip()
+makezip()
 {
     zip -r "${1%%/}.zip"    "$1"
 }
 
 # Colored output for man pages
 # https://wiki.archlinux.org/index.php/Man#Colored_man_pages
-function man() {
+man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
     LESS_TERMCAP_md=$'\E[01;38;5;74m' \
     LESS_TERMCAP_me=$'\E[0m' \
