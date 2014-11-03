@@ -17,7 +17,7 @@ export EDITOR=/usr/bin/vim
 export MANWIDTH=70
 
 # Src directory
-export SRC=~/src
+export SRC="$HOME/src"
 
 # Stupid firefox keeps creating Desktop folder in $HOME
 export XDG_DESKTOP_DIR=/home/maarten
@@ -25,7 +25,7 @@ export XDG_DESKTOP_DIR=/home/maarten
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # Source .bashrc in case we are logging into runlevel 3
-    test -s ~/.bashrc && . ~/.bashrc || true
+    test -s "$HOME/.bashrc" && . "$HOME/.bashrc" || true
 fi
 
 # vim: ft=sh :
