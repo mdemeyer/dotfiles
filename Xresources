@@ -3,6 +3,16 @@
 ! xterm config file
 ! Copyright (C) 2014 De Meyer Maarten <de.meyer.maarten@gmail.com>
 !
+! Run xrdb -merge ~/.Xresources to apply changes
+!
+
+XTerm*VT100.geometry: 66x36
+
+XTerm*faceName: DejaVu Sans Mono:style=Book:antialias=false
+XTerm*faceSize: 9
 
 XTerm*background: black
-XTerm*foreground: white 
+XTerm*foreground: grey
+
+XTerm*saveLines: 512
+
