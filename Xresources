@@ -1,2 +1,8 @@
+! Xresources
+!
+! xterm config file
+! Copyright (C) 2014 De Meyer Maarten <de.meyer.maarten@gmail.com>
+!
+
 XTerm*background: black
 XTerm*foreground: white 
