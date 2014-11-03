@@ -28,3 +28,5 @@ if [ -n "$BASH_VERSION" ]; then
     test -s ~/.bashrc && . ~/.bashrc || true
 fi
 
+# vim: ft=sh :
+

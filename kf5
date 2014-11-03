@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+# .kf5
 #
 # Frameworks 5 bash settings
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
@@ -39,4 +39,6 @@ export CMAKE_PREFIX_PATH=$KF5:$CMAKE_PREFIX_PATH
 c=`echo -e "\033"`
 export QT_MESSAGE_PATTERN="%{appname}(%{pid})/(%{category}) "$'\033'\[31m"%{if-debug}"$'\033'\[34m"%{endif}%{function}"$'\033'\[0m": %{message}"
 unset c
+
+# vim: ft=sh :
 

@@ -1,4 +1,4 @@
-#! /bin/bash
+# .bashrc
 #
 # Bash configuration file
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
@@ -49,4 +49,6 @@ PS1="${BLUE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT
 if [ -f /usr/share/bash-completion/bash_completion ] ; then
     test -n "$PS1" && . /usr/share/bash-completion/bash_completion
 fi
+
+# vim: ft=sh :
 

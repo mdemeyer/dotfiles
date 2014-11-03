@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+# .alias
 #
 # Alias file
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
@@ -25,4 +25,6 @@ alias ping='ping -c 4'
 
 # Sane date format
 alias cleandate='date +%Y/%m/%d'
+
+# vim: ft=sh :
 
