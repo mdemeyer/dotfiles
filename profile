@@ -25,6 +25,6 @@ export XDG_DESKTOP_DIR=/home/maarten
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # Source .bashrc in case we are logging into runlevel 3
-    test -s ~/.bashrc && source ~/.bashrc || true
+    test -s ~/.bashrc && . ~/.bashrc || true
 fi
 

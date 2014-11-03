@@ -11,13 +11,13 @@
 shopt -s checkwinsize
 
 # Include bash functions
-test -s ~/.functions && source ~/.functions || true
+test -s ~/.functions && . ~/.functions || true
 
 # Include the alias file
-test -s ~/.alias && source ~/.alias || true
+test -s ~/.alias && . ~/.alias || true
 
 # Set the system up for kde development
-test -s ~/.kf5 && source ~/.kf5 || true
+test -s ~/.kf5 && . ~/.kf5 || true
 
 # Fancy prompt
 WHITE="\[\e[1;37m\]"
