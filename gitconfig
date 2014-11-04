@@ -1,11 +1,21 @@
-[url "git://anongit.kde.org/"]
-	insteadOf = kde:
-[url "git@git.kde.org:"]
-	pushInsteadOf = kde:
+[alias]
+    br = branch
+    ci = commit
+    co = checkout
+    di = diff
+    last = log -1 HEAD -p
+    pl = pull --rebase
+    pu = push
+    re = rebase
+    st = status
+[color]
+	ui = auto
+[commit]
+	template = ~/.commit-template
+[help]
+    autocorrect = 1
+[push]
+    default = simple
 [user]
 	email = de.meyer.maarten@gmail.com
 	name = Maarten De Meyer
-[commit]
-	template = ~/.commit-template
-[color]
-	ui = auto
