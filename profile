@@ -12,9 +12,11 @@ export HISTCONTROL=ignoreboth
 
 # Setup VI
 export EDITOR=/usr/bin/vim
+export VISUAL=$EDITOR
 
-# Smaller man pages
+# Better man pages
 export MANWIDTH=70
+export PAGER=/usr/bin/less
 
 # Src directory
 export SRC="$HOME/src"
