@@ -1,0 +1,29 @@
+# .inputrc
+#
+# Readline configuration
+# Copyright (C) 2014 De Meyer Maarten <de.meyer.maarten@gmail.com>
+#
+
+# Single tab completion
+set show-all-if-ambiguous on
+#set show-all-if-unmodified on
+
+# Replace already completed part with ...
+set completion-prefix-display-length 2
+
+# Only show dot files if I typed .
+set match-hidden-files off
+
+# Show all completions without a pager
+set page-completions off
+
+# The max amount of completions before asking to continue.
+# default: 100
+set completion-query-items 50
+
+# Complete at the end of a word when the cursor is in the middle
+set skip-completed-text on
+
+# Disable beeping on console when not using single tab completion
+set bell-style none
+
