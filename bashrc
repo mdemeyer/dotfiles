@@ -20,12 +20,12 @@ test -s "$HOME/.alias" && . "$HOME/.alias" || true
 test -s "$HOME/.kf5" && . "$HOME/.kf5" || true
 
 # Fancy prompt
-WHITE="\[\e[1;37m\]"
-RED="\[\e[1;31m\]"
-GREEN="\[\e[1;32m\]"
-YELLOW="\[\e[1;33m\]"
-BLUE="\[\e[1;34m\]"
-END="\[\033[0m\]"
+WHITE='\[\e[1;37m\]'
+RED='\[\e[1;31m\]'
+GREEN='\[\e[1;32m\]'
+YELLOW='\[\e[1;33m\]'
+BLUE='\[\e[1;34m\]'
+END='\[\033[0m\]'
 
 # Make the prompt red when running as root
 if [ $(id -u) -eq 0 ]; then
