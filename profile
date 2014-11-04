@@ -22,7 +22,7 @@ export PAGER=/usr/bin/less
 export SRC="$HOME/src"
 
 # Stupid firefox keeps creating Desktop folder in $HOME
-export XDG_DESKTOP_DIR=/home/maarten
+export XDG_DESKTOP_DIR=$HOME
 
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
