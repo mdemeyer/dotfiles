@@ -10,14 +10,19 @@
 # Update window size after every command
 shopt -s checkwinsize
 
+# Private function to source files if they are valid
+_source_if_exists() {
+    test -s "$1" && . "$1" || true
+}
+
 # Include bash functions
-test -s "$HOME/.functions" && . "$HOME/.functions" || true
-
+_source_if_exists "$HOME/.functions"
 # Include the alias file
-test -s "$HOME/.alias" && . "$HOME/.alias" || true
-
+_source_if_exists "$HOME/.alias"
 # Set the system up for kde development
-test -s "$HOME/.kf5" && . "$HOME/.kf5" || true
+_source_if_exists "$HOME/.kf5"
+# Use bash-completion, if available
+_source_if_exists /usr/share/bash-completions/bash_completion
 
 # Fancy prompt
 WHITE='\[\e[1;37m\]'
@@ -45,10 +50,7 @@ fi
 
 PS1="${BLUE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
 
-# Use bash-completion, if available
-if [ -f /usr/share/bash-completion/bash_completion ] ; then
-    test -n "$PS1" && . /usr/share/bash-completion/bash_completion
-fi
+unset -f _source_if_exists
 
 # vim: ft=sh :
 
