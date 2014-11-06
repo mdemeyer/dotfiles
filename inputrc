@@ -11,6 +11,14 @@ set show-all-if-unmodified on
 # Replace already completed part with ...
 set completion-prefix-display-length 2
 
+# Ignore case when auto completing
+# Default: off
+set completion-ignore-case off
+
+# Consider underscore and dash equal on tab complete
+# Default: off
+set completion-map-case off
+
 # Only show dot files if I typed .
 set match-hidden-files off
 
