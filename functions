@@ -66,6 +66,12 @@ makezip()
     zip -r "${1%%/}.zip"    "$1"
 }
 
+# Create a directory and cd into it.
+# -p can add parents
+mkdircd() {
+    mkdir -p "$@" && cd "$_"
+}
+
 # Colored output for man pages
 # https://wiki.archlinux.org/index.php/Man#Colored_man_pages
 man() {

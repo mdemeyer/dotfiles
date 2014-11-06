@@ -20,6 +20,9 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -Al'
 
+# Shorten our mkdircd function
+alias mkcd='mkdircd'
+
 # Give ping a default timeout
 alias ping='ping -c 4'
 
