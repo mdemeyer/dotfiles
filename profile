@@ -24,6 +24,9 @@ export SRC="$HOME/src"
 # Stupid firefox keeps creating Desktop folder in $HOME
 export XDG_DESKTOP_DIR=$HOME
 
+# Disable messages to root
+test $(id -u) -eq 0 && mesg n || true
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # Source .bashrc in case we are logging into runlevel 3
