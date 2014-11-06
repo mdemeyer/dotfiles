@@ -27,6 +27,9 @@ export LESSHISTFILE=-
 less_path='?f%f:Standard input.?m (file %i of %m). ?e(END) ?x- Next\: %x.:?pB%pB\%..%t'
 export LESS="-iRP$less_path"
 
+# Enable color output for grep
+export GREP_OPTIONS='--color-auto'
+
 # Src directory
 export SRC="$HOME/src"
 

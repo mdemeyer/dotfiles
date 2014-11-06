@@ -5,9 +5,6 @@
 #
 
 # Enable color output for commands
-alias grep='grep --color=auto'
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 alias dmesg='dmesg --color'
 
 # Check if we can use colordiff
