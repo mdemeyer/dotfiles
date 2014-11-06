@@ -17,6 +17,15 @@ export VISUAL=$EDITOR
 # Better man pages
 export MANWIDTH=70
 export PAGER=/usr/bin/less
+# Don't store less history (.lesshst file)
+export LESSHISTFILE=-
+# Less options
+# -i ignore case in searches if the search is lowercase
+# -FX Close less if the output fits on one page
+# -R Show color output from grep --color=always
+# -P Use custom path
+less_path='?f%f:Standard input.?m (file %i of %m). ?e(END) ?x- Next\: %x.:?pB%pB\%..%t'
+export LESS="-iRP$less_path"
 
 # Src directory
 export SRC="$HOME/src"
