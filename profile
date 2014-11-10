@@ -41,9 +41,8 @@ export XDG_DESKTOP_DIR=$HOME
 # Disable messages to root
 test $(id -u) -eq 0 && mesg n || true
 
-# if running bash
+# Source .bashrc in case we are logging into runlevel 3
 if [ -n "$BASH_VERSION" ]; then
-    # Source .bashrc in case we are logging into runlevel 3
     test -s "$HOME/.bashrc" && . "$HOME/.bashrc" || true
 fi
 
