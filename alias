@@ -26,5 +26,8 @@ alias ping='ping -c 4'
 # Sane date format
 alias cleandate='date +%Y/%m/%d'
 
+# Make info more like man
+alias info='info --vi-keys'
+
 # vim: ft=sh :
 
