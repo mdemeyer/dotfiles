@@ -85,5 +85,20 @@ man() {
     man "$@"
 }
 
+# Show the available ANSI colors and codes
+# Could use some cleanup to check screen width
+colordump() {
+    for i in $(seq 1 "$(tput colors)")
+    do
+        tput setab "$i"
+        printf "%*d" 7 "$i"
+        if [ "$(( i % 10))" -eq 0 ]; then
+            printf '\n'
+        fi
+    done
+    tput setab 0
+    printf '\n'
+}
+
 # vim: ft=sh :
 
