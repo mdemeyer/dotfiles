@@ -29,7 +29,7 @@ export LESSHISTFILE=-
 less_path='?f %f.?m (file %i of %m). ?e(END)?x- Next\: %x.:?pB%pB\%..?n (press h for help or q to quit).%t'
 export LESS="-iRP$less_path"
 # Load the full file in memory. Needed for % in prompt
-# G to to end of file, g go back to beginning
+# G go to end of file, g go back to beginning
 export MANPAGER='less -s +Gg'
 # Prompt for man pages
 export MANLESS="\$MAN_PN\ ?e(END):?pB%pB\%..?n (press h for help or q to quit).%t"
