@@ -16,7 +16,7 @@ makebuild()
     dirs=(*/)
     shopt -u nullglob
 
-    for dir in ${dirs[@]} ; do
+    for dir in "${dirs[@]}" ; do
         if [ $dir = "build/" ] ; then
             rm build/ -r
         fi
