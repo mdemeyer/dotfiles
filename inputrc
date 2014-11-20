@@ -35,3 +35,7 @@ set skip-completed-text on
 # Disable beeping on console when not using single tab completion
 set bell-style none
 
+# Use Ctrl-left-arrow and Ctrl-right-arrow to move the cursor a word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
+
