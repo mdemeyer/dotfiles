@@ -8,7 +8,7 @@
 alias dmesg='dmesg --color'
 
 # Check if we can use colordiff
-if [ -n "$(which colordiff)" ]; then
+if [ "$(which colordiff &> /dev/null)" ]; then
     alias diff='colordiff'
 fi
 
