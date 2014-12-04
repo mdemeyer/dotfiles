@@ -32,6 +32,8 @@ export LESS="-iRP$less_path"
 export MANPAGER='less -s +Gg'
 # Prompt for man pages
 export MANLESS="\$MAN_PN\ ?e(END):?pB%pB\%..?n (press h for help or q to quit).%t"
+# Always open first manpage
+export MAN_POSIXLY_CORRECT=1
 
 # Enable color output for grep
 export GREP_OPTIONS='--color=auto'
