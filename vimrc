@@ -100,3 +100,8 @@ endif
 :nmap j gj
 :nmap k gk
 
+" Markdown higlighting
+augroup mkd
+ autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
