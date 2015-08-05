@@ -32,5 +32,8 @@ alias cleandate='date +%Y/%m/%d'
 # Make info more like man
 alias info='info --vi-keys'
 
+# Start ssh-agent and add default key
+alias start_ssh='eval "$(ssh-agent -s)" && ssh-add'
+
 # vim: ft=sh :
 
