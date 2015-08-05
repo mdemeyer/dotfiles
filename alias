@@ -14,7 +14,7 @@ fi
 
 # Obligatory ls aliases
 alias ls='ls --color=auto'
-alias ll='ls -lh'
+alias ll='ls -lhG --time-style="+%d %b"'
 alias la='ls -Alh'
 
 # Shorten our mkdircd function
