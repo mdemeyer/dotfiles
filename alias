@@ -17,6 +17,9 @@ alias ls='ls --color=auto'
 alias ll='ls -lhG --time-style="+%d %b"'
 alias la='ls -Alh'
 
+# Color grep output
+alias grep='grep --color=auto'
+
 # Shorten our mkdircd function
 alias mkcd='mkdircd'
 

@@ -35,9 +35,6 @@ export MANLESS="\$MAN_PN\ ?e(END):?pB%pB\%..?n (press h for help or q to quit).%
 # Always open first manpage
 export MAN_POSIXLY_CORRECT=1
 
-# Enable color output for grep
-export GREP_OPTIONS='--color=auto'
-
 # Src directory
 export SRC="$HOME/src"
 
