@@ -85,6 +85,11 @@ man() {
     man "$@"
 }
 
+# Open only the specified applications in top
+ptop() {
+    top -p $(pgrep -d ',' "$@")
+}
+
 # Show the available ANSI colors and codes
 # Could use some cleanup to check screen width
 colordump() {
