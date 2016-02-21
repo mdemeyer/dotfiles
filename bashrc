@@ -30,7 +30,7 @@ RED='\[\e[1;31m\]'
 GREEN='\[\e[1;32m\]'
 YELLOW='\[\e[1;33m\]'
 BLUE='\[\e[1;34m\]'
-END='\[\033[0m\]'
+END='\[\e[0m\]'
 
 # Make the prompt red when running as root
 if [ "$UID" -eq 0 ]; then
