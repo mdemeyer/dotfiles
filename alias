@@ -17,6 +17,10 @@ alias ls='ls --color=auto'
 alias ll='ls -lhG --time-style="+%d %b"'
 alias la='ls -Alh'
 
+# Show file size in kB
+alias df='df -k'
+alias du='du -k'
+
 # Color grep output
 alias grep='grep --color=auto'
 
