@@ -6,7 +6,7 @@
 #
 
 # File list
-core="alias bashrc vimrc"
+core="alias bashrc vimrc profile"
 home="functions xinitrc Xresources"
 dev="gitconfig kdesrc-buildrc kdesrc-f5-buildrc kf5 bash_kde commit-template"
 
@@ -18,7 +18,7 @@ case $package in
     dev|kde)
         files="$core $dev" ;;
     home)
-        files="$core $dev $home" ;;
+        files="$core $home" ;;
     *)
         echo "Package $package not found!" ;;
 esac
@@ -27,13 +27,19 @@ esac
 backupDir=~/.dotfiles_backup
 mkdir -p $backupDir
 
-cd ~/src/dotfiles
+cd /home/maarten/src/dotfiles
 for file in $files; do
     echo "Installing $file"
     if [ -f ~/.$file ]; then
         mv ~/.$file $backupDir
     fi
-    ln -s ~/src/dotfiles/$file ~/.$file
+
+    if [ "$UID" -eq 0 ]; then
+	# Don't use link for root!
+	cp /home/maarten/src/dotfiles/$file ~/.$file
+    else
+	ln -s $HOME/src/dotfiles/$file ~/.$file
+    fi
 done
 
 source ~/.bashrc
