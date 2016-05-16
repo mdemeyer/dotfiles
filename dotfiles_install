@@ -5,6 +5,13 @@
 # Copyright (C) 2013 De Meyer Maarten <de.meyer.maarten@gmail.com>
 #
 
+dotfiles_directory="$HOME/dotfiles"
+
+if [ ! -e "$dotfiles_directory" ]; then
+    printf 'Error: Dotfiles directory does not exist.'
+    exit 1
+fi
+
 # File list
 core="alias bashrc vimrc profile functions inputrc"
 home="functions xinitrc Xresources"
@@ -27,7 +34,7 @@ esac
 backupDir=~/.dotfiles_backup
 mkdir -p $backupDir
 
-cd /home/maarten/src/dotfiles
+cd $dotfiles_directory
 for file in $files; do
     echo "Installing $file"
     if [ -f ~/.$file ]; then
@@ -38,9 +45,9 @@ for file in $files; do
 	# Don't use link for root!
 	cp /home/maarten/src/dotfiles/$file ~/.$file
     else
-	ln -s $HOME/src/dotfiles/$file ~/.$file
+    	ln -s "$dotfiles_directory/$file" "$HOME/.$file"
     fi
 done
 
-source ~/.bashrc
+. ~/.bashrc
 
