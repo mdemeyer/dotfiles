@@ -6,7 +6,7 @@
 #
 
 # File list
-core="alias bashrc vimrc profile"
+core="alias bashrc vimrc profile functions inputrc"
 home="functions xinitrc Xresources"
 dev="gitconfig kdesrc-buildrc kdesrc-f5-buildrc kf5 bash_kde commit-template"
 
