@@ -18,11 +18,8 @@ _source_if_exists() {
 # History settings
 HISTSIZE=500
 HISTFILESIZE=5000
-# Remove duplicate lines and ignore lines that start with space
 HISTCONTROL=erasedups:ignorespace
-# Don't show these commands in history
 HISTIGNORE='clear:exit:pwd:ls'
-# When the shell exits, append to the history file instead of overwriting it
 shopt -s histappend
 
 
