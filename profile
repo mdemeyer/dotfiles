@@ -4,13 +4,6 @@
 # Copyright (C) 2014 De Meyer Maarten <de.meyer.maarten@gmail.com>
 #
 
-# History settings
-export HISTSIZE=500
-export HISTFILESIZE=1000
-# No duplicate lines or lines that start with space
-export HISTCONTROL=ignoreboth
-# Don't show these commands in history
-export HISTIGNORE='clear:exit:pwd:ls'
 # Setup VI
 export EDITOR=/usr/bin/vim
 export VISUAL=$EDITOR
