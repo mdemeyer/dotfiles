@@ -105,5 +105,9 @@ colordump() {
     printf '\n'
 }
 
+retry_ssh() {
+	while true; do command ssh -o "ConnectTimeout 5" "$@"; [ $? -ne 255 ] && break || sleep 0.5; done
+}
+
 # vim: ft=sh :
 
