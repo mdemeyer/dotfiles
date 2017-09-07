@@ -59,7 +59,7 @@ else
     REMOTE=""
 fi
 
-PS1="${BLUE}\n\$(pwd)\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
+PS1="${BLUE}\n\$PWD\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
 
 unset -f _source_if_exists
 unset -v USER
