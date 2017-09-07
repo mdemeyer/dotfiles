@@ -10,6 +10,9 @@
 # Update window size after every command
 shopt -s checkwinsize
 
+# Filename completion with variables
+shopt -s direxpand
+
 # Private function to source files if they are valid
 _source_if_exists() {
     test -s "$1" && . "$1" || true
