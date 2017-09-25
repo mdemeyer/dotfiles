@@ -13,11 +13,6 @@ shopt -s checkwinsize
 # Filename completion with variables
 shopt -s direxpand
 
-# Private function to source files if they are valid
-_source_if_exists() {
-    test -s "$1" && . "$1" || true
-}
-
 # History settings
 HISTSIZE=500
 HISTFILESIZE=5000
@@ -25,15 +20,16 @@ HISTCONTROL=erasedups:ignorespace
 HISTIGNORE='clear:exit:pwd:ls'
 shopt -s histappend
 
+for file in $HOME/.rc.d/* ; do
+    if [ -f "$file" ] ; then
+        . "$file"
+    fi
+done
 
-# Include bash functions
-_source_if_exists "$HOME/.functions"
-# Include the alias file
-_source_if_exists "$HOME/.alias"
-# Set the system up for kde development
-_source_if_exists "$HOME/.kf5"
 # Use bash-completion, if available
-_source_if_exists /usr/share/bash-completions/bash_completion
+if [ -f "/usr/share/bash-completion/bash_completion" ] ; then
+    . "/usr/share/bash-completion/bash_completion"
+fi
 
 # Fancy prompt
 WHITE='\[\e[1;37m\]'
@@ -61,7 +57,6 @@ fi
 
 PS1="${BLUE}\n\$PWD\n${BLUE}[${END}${USER}${REMOTE}${BLUE}]${END}${USER_PROMPT} "
 
-unset -f _source_if_exists
 unset -v USER
 
 # vim: ft=sh :
