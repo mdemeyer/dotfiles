@@ -1,0 +1,100 @@
+
+
+# Create a build folder an build the source
+makebuild()
+{
+    base=$(basename "$PWD")
+    if [ "$base" = "build" ] ; then
+        cd ..
+    fi
+
+    shopt -s nullglob
+    dirs=(*/)
+    shopt -u nullglob
+
+    for dir in "${dirs[@]}" ; do
+        if [ $dir = "build/" ] ; then
+            rm build/ -r
+        fi
+    done
+
+    mkdir build
+    cd build
+    cmake ..
+
+    echo 'Press <ENTER> to continue...'
+    read userinput
+    make
+}
+
+# Rebuild source in current build folder
+build()
+{
+    base=$(basename "$PWD")
+    if [ ! "$base" = 'build' ] ; then
+        # Wrong directory
+        cd build/
+    fi
+
+    cmake ..
+    make
+}
+
+# Extract archives
+extract()
+{
+    if [ -f "$1" ] ; then
+        ark --batch --autodestination --autosubfolder "$1"
+   else
+        echo 'Not a valid file.'
+    fi
+}
+
+# Easy to use tar command
+maketar()
+{  
+    tar cvzf "$1%%/}.tar.gz"    "${1%%/}"
+}
+
+# Easy zip
+makezip()
+{
+    zip -r "${1%%/}.zip"    "$1"
+}
+
+# Create a directory and cd into it.
+# -p can add parents
+mkdircd() {
+    mkdir -p "$@" && cd "$_"
+}
+
+# Colored output for man pages
+# https://wiki.archlinux.org/index.php/Man#Colored_man_pages
+man() {
+    env LESS_TERMCAP_mb=$'\E[01;31m' \
+    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+    LESS_TERMCAP_me=$'\E[0m' \
+    LESS_TERMCAP_se=$'\E[0m' \
+    LESS_TERMCAP_so=$'\E[38;5;246m' \
+    LESS_TERMCAP_ue=$'\E[0m' \
+    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+    man "$@"
+}
+
+# Show the available ANSI colors and codes
+# Could use some cleanup to check screen width
+colordump() {
+    for i in $(seq 1 "$(tput colors)")
+    do
+        tput setab "$i"
+        printf "%*d" 7 "$i"
+        if [ "$(( i % 10))" -eq 0 ]; then
+            printf '\n'
+        fi
+    done
+    tput setab 0
+    printf '\n'
+}
+
+# vim: ft=sh :
+
