@@ -1,0 +1,14 @@
+# customrc
+#
+# Read the custom config files in .customrc.d/
+# Put configuration files that should not be tracked by git in that directory.
+#
+
+for file in $HOME/.customrc.d/* ; do
+    if [ -s "$file" ] ; then
+        . "$file"
+    fi
+done
+
+# vim: ft=sh :
+

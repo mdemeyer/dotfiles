@@ -37,6 +37,13 @@ export XDG_DESKTOP_DIR=$HOME
 # Disable messages to root
 test "$(id -u)" -eq 0 && mesg n || true
 
+# Read the custom profile config files
+for file in $HOME/.customprofile.d/* ; do
+    if [ -s "$file" ] ; then
+        . "$file"
+    fi
+done
+
 # Source .bashrc in case we are logging into runlevel 3
 if [ -n "$BASH_VERSION" ]; then
     test -s "$HOME/.bashrc" && . "$HOME/.bashrc" || true
