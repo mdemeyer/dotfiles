@@ -21,17 +21,32 @@
 	email = de.meyer.maarten@gmail.com
 	name = Maarten De Meyer
 [color "diff"]
-	meta = 99 black bold
-	frag = 25 black bold
-	old = 196 black
-	new = 34 black
-    whitespace = 196 reverse
+	func = cyan bold
+	commit = blue bold
+	frag = blue
+	old = red bold
+	new = green bold
+	whitespace = red reverse bold
 [color "branch"]
-	current = 25 black bold
-    #local
-    #remote
+	current = cyan bold
+	remote = yellow
+[color "interactive"]
+	prompt = yellow bold
+	header = blue
+	help = cyan
+	error = red bold
 [color "status"]
-	added = 34 black
-	changed = 1 black
-	untracked = 208 black
-    branch = 25 black bold
+	author = green
+	changed = blue
+	untracked = yellow
+	branch = cyan bold
+	added = green
+	localBranch = blue bold
+	remoteBranch = yellow
+	unmerged = red bold
+[color "decorate"]
+	branch = cyan bold
+	remoteBranch = yellow
+	tag = yellow bold
+	stash = red
+	HEAD = cyan
