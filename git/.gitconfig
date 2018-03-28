@@ -9,6 +9,7 @@
     pu = push
     re = rebase
     st = status
+    lg = "log --graph --pretty=format:'%C(auto)%h%C(auto,reset) -%C(auto)%d%C(auto,reset) %s %C(green)(%cr)%C(auto,reset) %C(blue)<%an>%C(auto,reset)'"
 [color]
 	ui = auto
 [commit]
