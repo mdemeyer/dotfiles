@@ -100,6 +100,10 @@ endif
 :nmap j gj
 :nmap k gk
 
+" Enable line numbers "
+set number
+set relativenumber
+
 " Markdown higlighting
 augroup mkd
  autocmd BufRead *.mkd set ai formatoptions=tcroqn2 comments=n:>
