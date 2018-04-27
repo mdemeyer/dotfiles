@@ -28,8 +28,9 @@ export MANLESS="\$MAN_PN\ ?e(END):?pB%pB\%..?n (press h for help or q to quit).%
 # Always open first manpage
 export MAN_POSIXLY_CORRECT=1
 
-# Src directory
-export SRC="$HOME/src"
+# Common directories
+export src="$HOME/src"
+export notes="$HOME/documents/notes"
 
 # Stupid firefox keeps creating Desktop folder in $HOME
 export XDG_DESKTOP_DIR=$HOME
