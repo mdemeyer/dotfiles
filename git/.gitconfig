@@ -51,3 +51,5 @@
 	tag = yellow bold
 	stash = red
 	HEAD = cyan
+[pager]
+    branch = false
